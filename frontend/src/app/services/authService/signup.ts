@@ -1,4 +1,4 @@
-import { httpClient } from "../HttpClient";
+import { httpClient } from "../httpClient";
 
 export interface SignupParams {
   name: string;
@@ -7,7 +7,7 @@ export interface SignupParams {
 }
 
 interface SignupResponse {
-  acessToken: string;
+  accessToken: string;
 }
 
 export async function signup(params: SignupParams) {
