@@ -175,8 +175,8 @@ export default {
       },
     },
     keyframes: {
-      slideUpAndFade: {
-        from: { opacity: "0", transform: "translateY(2px)" },
+      slideDownAndFade: {
+        from: { opacity: "0", transform: "translateY(-2px)" },
         to: { opacity: "1", transform: "translateY(0)" },
       },
       slideUpAndFade: {
@@ -196,7 +196,8 @@ export default {
       },
     },
     animation: {
-      "slide-up-and-fade": "slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+      "slide-down-and-fade":
+        "slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
       "slide-up-and-fade": "slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
       "overlay-show": "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
       "content-show": "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",

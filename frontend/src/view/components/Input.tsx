@@ -37,7 +37,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         {error && (
           <div className="flex gap-2 items-center mt-2 text-red-900">
             <CrossCircledIcon />
-            <span className="text-x">{error}</span>
+            <span className="text-xs">{error}</span>
           </div>
         )}
       </div>
