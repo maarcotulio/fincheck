@@ -7,6 +7,7 @@ import { useAccountsController } from "./useAccountsController";
 import { cn } from "../../../../../app/utils/cn";
 import { Spinner } from "../../../../components/Spinner";
 import { PlusIcon } from "@radix-ui/react-icons";
+import { formatCurrency } from "../../../../../app/utils/formatCurrency";
 
 export function Accounts() {
   const {
@@ -18,6 +19,7 @@ export function Accounts() {
     isLoading,
     accounts,
     openNewAccountModal,
+    currentBalance,
   } = useAccountsController();
 
   return (
@@ -40,7 +42,7 @@ export function Accounts() {
                 !areValuesVisible && "blur-md"
               )}
             >
-              R$1000,00
+              {formatCurrency(currentBalance)}
             </strong>
 
             <button
@@ -99,14 +101,11 @@ export function Accounts() {
                     />
                   </div>
 
-                  <SwiperSlide>
-                    <AccountCard
-                      type="CASH"
-                      balance={123}
-                      name="Nubank"
-                      color="#7950F2"
-                    />
-                  </SwiperSlide>
+                  {accounts.map((account) => (
+                    <SwiperSlide key={account.id}>
+                      <AccountCard data={account} />
+                    </SwiperSlide>
+                  ))}
                 </Swiper>
               </div>
             )}
