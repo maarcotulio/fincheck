@@ -3,7 +3,7 @@ import { NumericFormat } from "react-number-format";
 
 interface InputCurrencyProps {
   error?: string;
-  value?: string;
+  value?: string | number;
   onChange(value: string): void;
 }
 
@@ -14,6 +14,8 @@ export function InputCurrency({ error, onChange, value }: InputCurrencyProps) {
         thousandSeparator="."
         decimalSeparator=","
         decimalScale={2}
+        allowNegative={false}
+        fixedDecimalScale={true}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         className="text-gray-800 text-[32px] font-bold tracking-[-1px] outline-none w-full"
