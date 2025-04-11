@@ -55,7 +55,8 @@ export function useNewTransactionModalController() {
         date: data.date.toISOString(),
       });
 
-      queryClient.invalidateQueries({ queryKey: ["transaction"] });
+      queryClient.invalidateQueries({ queryKey: ["transactions"] });
+      queryClient.invalidateQueries({ queryKey: ["bankAccounts"] });
       toast.success("Transação cadastrada com sucesso!");
       closeNewTransactionModal();
       reset();
